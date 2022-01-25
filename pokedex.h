@@ -20,6 +20,8 @@ Pokedex(string, int);
 void add_pokemon(Pokemon*);
 void print_pokemon();
 void add_list(Pokemon*);
+int get_num();
+//Pokemon search_number(int);
 
 private:    
     string name;

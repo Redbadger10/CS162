@@ -21,7 +21,6 @@ using namespace std;
 Pokedex::Pokedex(string name, int total_pokemon){
     this->name = name;
     this->total_pokemon = total_pokemon;
-    cout << "POKEDEX: " << this->total_pokemon << endl;
 }
 
 
@@ -74,16 +73,30 @@ void Pokedex::add_pokemon(Pokemon* pokemon){
  ** notes: impoted from lab2 must make work with new requirements
  *********************************************************************/
 void Pokedex::print_pokemon(){
-    cout << total_pokemon;
+    cout << this->total_pokemon << " problem";
     
-   for(int i = 0; i < total_pokemon; i++){
+   for(int i = 0; i < this->total_pokemon; i++){
         cout << "Number: " << this->pokemon_list[i].get_number() << endl;
         cout << "Name: " << this->pokemon_list[i].get_name() << endl;
         cout << "Type: " << this->pokemon_list[i].get_type() << endl;
-        string* temp;
+        string temp[4];
         for(int j = 0; j < 4; j++){
-            temp[j] = this->pokemon_list[i].get_moves(j);
+           temp[j] = this->pokemon_list[i].get_moves(j);
         }
         cout << "Moves: " << temp[0] << ", " << temp[1] << ", " << temp[2] << ", " << temp[3] << endl << endl;
    }
 }
+
+int Pokedex::get_num(){
+	return this->total_pokemon;
+}
+
+/*
+Pokemon Pokedex::search_number(int number){
+    for(int i = 0; i < this->total_pokemon; i++){
+        if(pokemon_list[i].get_number() == number){
+            return pokemon_list[i];
+        }
+    }
+}
+*/

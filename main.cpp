@@ -19,7 +19,7 @@ Pokedex* fill_dex(string filename){
     ifstream file(filename);
     Pokemon * pokemon_list;
     Pokemon * pokemon;
-    int total_pokemon;
+    int f_total_pokemon;
     int number;
     string name;
     string type;
@@ -31,11 +31,11 @@ Pokedex* fill_dex(string filename){
 
     cout << "Please enter your name: " << endl; 
     cin >> name;
-    file >> total_pokemon;
-    pokemon_list = new Pokemon[total_pokemon];
-    Pokedex * pokedex = new Pokedex(name, total_pokemon);
+    file >> f_total_pokemon;
+    pokemon_list = new Pokemon[f_total_pokemon];
+    Pokedex * pokedex = new Pokedex(name, f_total_pokemon);
     cout << "here";
-    for(int i = 0; i < total_pokemon; i++){
+    for(int i = 0; i < f_total_pokemon; i++){
         file >> number;
         cout << i << ": " << number << endl; //DELETE LATER
         file >> name;
@@ -50,8 +50,9 @@ Pokedex* fill_dex(string filename){
         pokemon->set_moves(move1,move2,move3,move4);
         pokemon_list[i] = *pokemon;
     }
-    cout << pokemon_list[1].get_name() << "PLEASE WORK" << endl;
+    //cout << pokemon_list[1].get_name() << "PLEASE WORK" << endl;
     pokedex->add_list(pokemon_list);
+    cout << pokedex->get_num();
     pokedex->print_pokemon();
     file.close();
     return pokedex;
