@@ -92,7 +92,7 @@ int main(int argc, char *argv[]){
     Pokedex* pokedex;
     pokedex = fill_dex(filename);
     cout << "hello" << endl;
-    //pokedex->print_pokemon();
+    pokedex->print_pokemon();
 
 
     return 0;
